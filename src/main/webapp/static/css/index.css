@@ -1,0 +1,1493 @@
+html {-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin:0;padding: 0;height: 100%;}
+body {width: 100%;height: 100%;-webkit-touch-callout: none;font-family: "微软雅黑", Helvetica, Arial, sans-serif;line-height: inherit;position: relative;}
+@media screen and (min-width:320px) and (max-width:375px){html{font-size:12px}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:14px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:16px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:18px}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:20px}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:22px}}
+@media screen and (min-width:800px){html{font-size:24px}}
+* {margin: 0;padding: 0;font-style: normal;font-size: 100%;vertical-align: baseline;font-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	appearance: normal;
+	-moz-appearance: none;
+	border-radius: 0px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	transform: none;
+	-webkit-transform: none;
+	-moz-transform: none;
+	transition: none;
+	-webkit-transition: none;
+	-moz-transition: none;
+	-webkit-tap-highlight-color:transparent;
+}
+ul li,ol li {list-style: none;}
+input{-webkit-appearance: none;}
+a {
+	text-decoration: none;
+	cursor: pointer;
+	bblr:expression(this.onFocus=this.blur());/*IE使用*/
+	outline-style:none;/*FF使用*/
+}
+img {
+	height: auto !important;
+	vertical-align: middle;
+	border: 0 none;
+}
+input,select,button,a{
+	outline: none;
+}
+.clearfix:after{
+	display: block;
+	clear: both;
+	content: "";
+	height: 0;
+}
+.indexTitle{
+	position: relative;
+	padding: 5% 5% 0;
+	width: 90%;
+}
+.indexTitle .bg-index{
+	width: 100%;
+}
+.indexTitle p{
+	position: absolute;
+	width: 80%;
+	color: #FFFFFF;
+	left: 10%;
+}
+.indexTitle .logo{
+	top: 22%;
+	font-size: 1rem;
+}
+.indexTitle .note{
+	top: 45%;
+	font-size: 1.1rem;
+}
+.indexTitle .logo img{
+	width: 6%;
+	margin-right: 2%;
+	margin-top: -1%;
+}
+.indexTitle a{
+	position: absolute;
+	bottom: 10%;
+	left: 10%;
+	padding: 5px 10px;
+	border: 1px solid #FFFFFF;
+	color: #FFFFFF;
+	border-radius: 5px;
+	font-size: 1rem;
+}
+.indexTitle font{
+	position: absolute;
+	bottom: 15%;
+	left: 10%;
+	color: #FFFFFF;
+	font-size: 1rem;
+}
+.serve{
+	width: 100%;
+	background-color: #FFFFFF;
+	margin-top: 5%;
+}
+.last{
+	margin-bottom: 70px;
+}
+.title{
+	width: 90%;
+	margin-left: 5%;
+	padding: 10px 0;
+	border-bottom: 1px solid #f6f6f6;
+}
+.title img{
+	width: 2%;
+	float: right;
+	margin-top: 1%;
+}
+.title span{
+	border-left: 4px solid #3e8cf4;
+	color: #333333;
+	padding-left: 2%;
+	font-size: 1.1rem;
+}
+.serve ul{
+	width: 94%;
+	margin-left: 3%;
+	padding: 10px 0;
+}
+.serve ul li{
+	width: 25%;
+	float: left;
+	padding: 5px 0;
+}
+.serve ul li a{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+.serve ul li a img{
+	width: 50%;
+}
+.serve ul li a p{
+	color: #666666;
+	font-size: 1rem;
+	margin-top: 5px;
+}
+.footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	border-top: 1px solid #CCCCCC;
+	background-color: #FFFFFF;
+	z-index: 2;
+}
+.footer li{
+	flex: 1;
+}
+.footer li a{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	padding: 5px 0;
+}
+.footer li a img{
+	width: 21%;
+}
+.footer li a p{
+	color: #333333;
+	font-size: .75rem;
+}
+
+.footer .active a p{
+	color: #538aed;
+}
+/*department.html*/
+.searchBox{
+	position: relative;
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+	border-bottom: 1px solid #EEEEEE;
+}
+.searchBox .search{
+	position: absolute;
+	left: 5%;
+	top: 15px;
+	height: 40px;
+	line-height: 40px;
+	background-color: #EEEEEE;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+}
+.searchBox button{
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	transform: translate(0,-50%);
+	background-color: transparent;
+	border: none;
+	font-size: 1.2rem;
+	color: #3E8CF4;
+}
+.searchBox .search img{
+	width: 5%;
+	margin-left: 2%;
+}
+.searchBox .search input{
+	width: 90%;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	background-color: transparent;
+	color: #000000;
+	font-size: 1.2rem;
+}
+.departmentListBox{
+	width: 100%;
+	height: calc(100% - 71px);
+	overflow: hidden;
+}
+.departmentList{
+	width: 35%;
+	float: left;
+	height: 100%;
+	overflow: auto;
+}
+.departmentList .department .active{
+	color: #3E8CF4;
+	border-left: 4px solid #3e8cf4;
+}
+.subjectBox .subject .active{
+	color: #3E8CF4;
+}
+.departmentList .department{
+	width: 100%;
+	height: 100%;
+}
+.departmentList .department li{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;	
+}
+.departmentList .department li span{
+	margin-left: 10%;
+	padding-left: 5px;
+	font-size: 1.3rem;
+	color: #666666;
+}
+.subjectBox{
+	width: 65%;
+	float: right;
+	height: 100%;
+	overflow: auto;
+	border-left: 1px solid #EEEEEE;
+	box-sizing: border-box;
+}
+.subjectBox .subject{
+	width: 100%;
+	height: 100%;
+}
+.subjectBox .subject .hide{
+	display: none;
+}
+.subjectBox .subject ul{
+	width: 90%;
+	margin-left: 10%;
+}
+.subjectBox .subject ul li{
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	border-bottom: 1px solid #EEEEEE;
+	font-size: 1.3rem;
+	color: #333333;
+	box-sizing: border-box;
+}
+.hotSearch{
+	width: 100%;
+}
+.hotSearch .titlename{
+	width: 95%;
+	margin-left: 5%;
+	border-bottom: 1px solid #EEEEEE;
+	height: 50px;
+	line-height: 50px;
+	color: #999999;
+	font-size: 1.2rem;
+}
+.hotSearch div{
+	width: 90%;
+	margin-left: 5%;
+}
+.hotSearch div p{
+	width: 100%;
+	margin-top: 20px;
+	display: flex;
+}
+.hotSearch div span{
+	flex: 1;
+	padding: 3px 1px;
+	color: #333333;
+	font-size: 1.2rem;
+	border: 1px solid #EEEEEE;
+	border-radius: 3px;
+	margin-right: 3%;
+	text-align: center;
+}
+/*doctorList.html*/
+.doctorList{
+	width: 100%;
+	background-color: #FFFFFF;
+	margin-bottom: 3%;
+}
+.doctorList div{
+	position: relative;
+	width: 90%;
+	margin-left: 5%;
+	padding: 3% 0;
+	border-bottom: 1px solid #EEEEEE;
+}
+.doctorList div img{
+	width: 20%;
+}
+.doctorList div span{
+	position: absolute;
+	left: 25%;
+	top: 15%;
+	font-size: 1.1rem;
+	color: #333333;
+}
+.doctorList div font{
+	position: absolute;
+	left: 25%;
+	top: 40%;
+	font-size: 1rem;
+	color: #999999;
+}
+.doctorList div a{
+	position: absolute;
+	left: 25%;
+	top: 65%;
+	font-size: 1rem;
+	color: #f49464;
+}
+.doctorList div button{
+	position: absolute;
+	padding: 5px 8px;
+	right: 0;
+	top: 50%;
+	transform: translate(0,-50%);
+	color: #3E8CF4;
+	background-color: transparent;
+	border: 1px solid #3E8CF4;
+	border-radius: 5px;
+	font-size: 1.1rem;
+}
+.doctorList p{
+	width: 90%;
+	margin-left: 5%;
+	font-size: 1rem;
+	color: #999999;
+	padding: 3% 0;
+	line-height: 20px;
+}
+/*doctor.html*/
+.doctor{
+	width: 100%;
+	background: url(../images/bg_doc.png) no-repeat 0 0/100% 100%;
+}
+.doctor div{
+	position: relative;
+	width: 100%;
+	padding: 5% 0;
+}
+.doctor div img{
+	width: 20%;
+	margin-left: 5%;
+}
+.doctor div span{
+	position: absolute;
+	left: 30%;
+	top: 30%;
+	font-size: 1.1rem;
+	color: #FFFFFF;
+}
+.doctor div font{
+	position: absolute;
+	left: 30%;
+	top: 60%;
+	font-size: 1rem;
+	color: #FFFFFF;
+}
+.doctor div a{
+	position: absolute;
+	left: 43%;
+	top: 31%;
+	font-size: 1rem;
+	color: #FFFFFF;
+}
+.docIntro{
+	width: 90%;
+	margin-left: 5%;
+	font-size: 1rem;
+	color: #333333;
+	padding: 3% 0;
+	line-height: 20px;
+}
+.doctorServe{
+	width: 100%;
+	background-color: #FFFFFF;
+	margin-top: 5%;
+}
+.doctorServe dl{
+	width: 100%;
+}
+.doctorServe dl dd{
+	width: 100%;
+}
+.doctorServe dl dd ul{
+	width: 100%;
+	display: flex;
+	border-top: 1px solid #EEEEEE;
+}
+.doctorServe dl dd ul li{
+	flex: 1;
+	box-sizing: border-box;
+	border-left: 1px solid #EEEEEE;
+}
+.doctorServe dl dd ul li a{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	line-height: 44px;
+	color: #333333;
+	font-size: 1rem;
+}
+.doctorServe dl dd ul li span{
+	display: inline-block;
+	padding: 4px 0 2px 0;
+	width: 100%;
+	text-align: center;
+	color: #333333;
+	font-size: 1rem;
+}
+.doctorServe dl dd ul li font{
+	display: inline-block;
+	padding: 2px 0 4px 0;
+	width: 100%;
+	text-align: center;
+	color: #999999;
+	font-size: 1rem;
+}
+.doctorServe dl dd ul li button{
+	width: 100%;
+	line-height: 44px;
+	color: #333333;
+	border: none;
+	background-color: #3E8CF4;
+	color: #FFFFCC;
+	font-size: 1rem;
+	border-radius: 5px;
+}
+.mask{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #000000;
+	opacity: .5;
+	display: none;
+}
+.otherDoc li{
+	position: relative;
+	width: 50%;
+	float: left;
+	padding: 5% 0;
+	box-sizing: border-box;
+}
+.otherDoc li:nth-child(odd) div{
+	border-right: 1px solid #EEEEEE;
+}
+.otherDoc li img{
+	width: 20%;
+	margin-left: 10%;
+}
+.otherDoc li span{
+	position: absolute;
+	left: 35%;
+	top: 27%;
+	font-size: 1.1rem;
+	color: #000000;
+}
+.otherDoc li font{
+	position: absolute;
+	left: 35%;
+	top: 50%;
+	font-size: 1rem;
+	color: #999999;
+}
+.otherDoc li a{
+	position: absolute;
+	left: 60%;
+	top: 28%;
+	font-size: 1rem;
+	color: #999999;
+}
+.reserveDateBox{
+	position: fixed;
+	top: 0;
+	right: -80%;
+	width: 80%;
+	height: 100%;
+	background-color: #FFFFFF;
+	overflow: hidden;
+}
+.reserveDate{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+.reserveDate p{
+	width: 100%;
+	background-color: #3E8CF4;
+	color: #FFFFFF;
+	font-size: 1.3rem;
+	text-align: center;
+	padding: 10px 0;
+}
+.reserveDate ul{
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 5%;
+	display: flex;
+}
+.reserveDate ul:last-child{
+	margin-bottom: 5%;
+}
+.reserveDate ul li{
+	flex: 1;
+	margin-left: 3%;
+	border: 1px solid #3E8CF4;
+	color: #3E8CF4;
+	border-radius: 5px;
+	padding: 5px 6px;
+	font-size: 1rem;
+	text-align: center;
+}
+.reserveDate ul li:last-child{
+	margin-right: 3%;
+}
+/*reserve.html*/
+.doctorHead{
+	width: 100%;
+	background-color: #FFFFFF;
+}
+.doctorHead div{
+	position: relative;
+	width: 100%;
+	padding: 5% 0;
+}
+.doctorHead div img{
+	width: 20%;
+	margin-left: 5%;
+}
+.doctorHead div .doctorName{
+	position: absolute;
+	left: 30%;
+	top: 30%;
+	font-size: 1.1rem;
+	color: #333333;
+}
+.doctorHead div font{
+	position: absolute;
+	left: 30%;
+	top: 60%;
+	font-size: 1rem;
+	color: #999999;
+}
+.doctorHead div a{
+	position: absolute;
+	left: 43%;
+	top: 31%;
+	font-size: 1rem;
+	color: #999999;
+}
+.doctorHead div .doctorPay{
+	position: absolute;
+	left: 80%;
+	top: 30%;
+	font-size: 1.1rem;
+	color: #f49464;
+}
+.doctorHead div .doctorFee{
+	position: absolute;
+	left: 80%;
+	top: 60%;
+	font-size: 1rem;
+	color: #f49464;
+}
+.diagnosis{
+	width: 100%;
+	background-color: #FFFFFF;
+	margin-bottom: 15px;
+}
+.diagnosis li{
+	width: 95%;
+	margin-left: 5%;
+	padding: 15px 0;
+	border-top: 1px solid #EEEEEE;
+	font-size: 1rem;
+	color: #333333;
+}
+.diagnosis li span{
+	float: right;
+	margin-right: 5%;
+	font-size: 1rem;
+	color: #333333;
+}
+.diagnosis li a{
+	display: inline-block;
+	width: 15%;
+	float: right;
+	margin-right: 5%;
+	color: #3E8CF4;
+}
+.diagnosis li a img{
+	float: right;
+	width: 30%;
+}
+.prompt{
+	margin: 10%;
+}
+.prompt li{
+	padding: 3px 0;
+	color: #999999;
+	font-size: 1rem;
+}
+.read{
+	width: 80%;
+	margin-left: 10%;
+	font-size: 1.1rem;
+	color: #999999;
+}
+.read img{
+	width: 5%;
+	margin-right: 3%;
+}
+.read span{
+	color: #FF0000;
+	font-size: 1rem;
+}
+.confirm{
+	width: 90%;
+	border: none;
+	padding: 12px 0;
+	border-radius: 5px;
+	margin: 5%;
+	color: #FFFFFF;
+	font-size: 1rem;
+	background-color: #d2d2d2;
+}
+/*hospitalMsg.html*/
+.banner_hospital{
+	width: 100%;
+}
+.hospitalList{
+	width: 100%;
+	padding: 20px 0;
+	background-color: #FFFFFF;
+}
+.hospitalList li{
+	width: 25%;
+	float: left;
+}
+.hospitalList li a{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+.hospitalList li a img{
+	width: 50%;
+}
+.hospitalList li a p{
+	margin-top: 10px;
+	color: #666666;
+	font-size: 1rem;
+}
+.hosIntro{
+	padding: 5%;
+	text-align: justify;
+	text-indent: 25px;
+	font-size: 1rem;
+	color: #666666;
+}
+.route{
+	width: 100%;
+}
+.route dd{
+	position: relative;
+	width: 90%;
+	margin-left: 5%;
+	border-bottom: 1px solid #EEEEEE;
+}
+.route dd:last-child{
+	border-bottom: none;
+}
+.route dd .icon{
+	position: absolute;
+	width: 10%;
+	top: 50%;
+	transform: translate(0,-50%);
+}
+.route dd div{
+	width: 85%;
+	float: right;
+	display: inline-block;
+	padding: 20px 0;
+}
+.route dd span{
+	color: #333333;
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+.route dd font{
+	color: #999999;
+	font-size: 1rem;
+}
+.route dd font em{
+	color: #149be9;
+}
+.route dd a{
+	position: absolute;
+	top: 28%;
+	right: 5%;
+	display: inline-block;
+	width: 12%;
+	color: #999999;
+	font-size: 1rem;
+	text-align: center;
+}
+.route dd a img{
+	width: 50%;
+}
+/*subject.html*/
+.subIntro{
+	width: 80%;
+	margin-left: 10%;
+}
+.subIntro p{
+	height: 60px;
+	line-height: 60px;
+	border-bottom: 1px solid #EEEEEE;
+	color: #333333;
+	font-size: 1.3rem;
+}
+.subIntro div{
+	padding-top: 15px;
+	color: #333333;
+	font-size: 1.2rem;
+	text-indent: 30px;
+	text-align: justify;
+}
+/*doctors.html*/
+.subjectBox .subject dl{
+	width: 100%;
+	padding: 10px 0;
+}
+.subjectBox .subject dl dd{
+	width: 50%;
+	float: left;
+	padding: 20px 0;
+}
+.subjectBox .subject dl dd a{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+.subjectBox .subject dl dd a img{
+	width: 50%;
+}
+.subjectBox .subject dl dd a .name{
+	font-size: 1.3rem;
+	color: #333333;
+	margin-top: 5px;
+}
+.subjectBox .subject dl dd a .grade{
+	font-size: 1.1rem;
+	color: #999999;
+	margin-top: 2px;
+}
+/*user.html*/
+.user{
+	width: 100%;
+	background: url(../images/bg_doc.png) no-repeat 0 0/100% 100%;
+}
+.user a{
+	display: inline-block;
+	width: 100%;
+	padding: 12% 0;
+	color: #FFFFFF;
+}
+.user a .user_head{
+	width: 4%;
+	margin-left: 5%;
+	margin-top: -1%;
+}
+.user a span{
+	margin-left: 3%;
+	font-size: 1.3rem;
+}
+.user a font{
+	margin-left: 1%;
+	font-size: 1.3rem;
+}
+.user a .user_more{
+	width: 3%;
+	float: right;
+	margin-right: 5%;
+	margin-top: 1%;
+}
+.user_msg{
+	width: 100%;
+	margin-top: 15px;
+	background-color: #FFFFFF;
+}
+.user_msg li{
+	padding: 15px 0;
+	width: 95%;
+	margin-left: 5%;
+}
+.user_msg li a{
+	display: inline-block;
+	width: 100%;
+	font-size: 1.3rem;
+	color: #333333;
+}
+.user_msg li a .tu{
+	width: 6%;
+	margin-top: -1%;
+	margin-right: 2%;
+}
+.user_msg li a .more{
+	width: 3%;
+	float: right;
+	margin-right: 5%;
+	margin-top: 1%;
+}
+/*logon.html*/
+.logon{
+	width: 100%;
+	padding: 25px 0;
+}
+.logon img{
+	width: 10%;
+	margin-left: 5%;
+	margin-top: -3%;
+}
+.logon span{
+	color: #333333;
+	font-size: 1.5rem;
+	margin-left: 3%;
+}
+.input{
+	width: 100%;
+	margin-top: 30px;
+}
+.input li{
+	width: 90%;
+	margin-left: 5%;
+	padding: 10px 0;
+	border-bottom: 1px solid #EEEEEE;
+}
+.input li:last-child{
+	margin-top: 20px;
+}
+.input li input{
+	color: #333333;
+	font-size: 1.2rem;
+	margin-left: 3%;
+	border: none;
+}
+.input input[type=submit]{
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 50px;
+	border: none;
+	background-color: #b5d4ff;
+	color: #09B6F2;
+	font-size: 1.3rem;
+	border-radius: 5px;
+	padding: 8px 0;
+}
+/*cardid.html*/
+.cardid{
+	width: 100%;
+}
+.cardid ul{
+	background-color: #FFFFFF;
+}
+.cardid li{
+	width: 90%;
+	margin-left: 5%;
+	padding: 10px 0;
+}
+.cardid li span{
+	font-size: 1.3rem;
+	color: #333333;
+}
+.cardid li a{
+	display: inline-block;
+	width: 40%;
+	float: right;
+	font-size: 1.3rem;
+}
+.cardid li a input{
+	width: 90%;
+	text-align: right;
+	font-size: 1.3rem;
+	color: #538aed;
+	border: none;
+}
+.cardid li a img{
+	width: 6%;
+	float: right;
+	margin-top: 4%;
+	
+}
+.cardid input[type=submit]{
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 50px;
+	border: none;
+	background-color: #538aed;
+	color: #FFFFFF;
+	font-size: 1.3rem;
+	border-radius: 5px;
+	padding: 8px 0;
+}
+/*guahao.html*/
+.guahaoDateBox{
+	position: fixed;
+	top: 0;
+	right: -80%;
+	width: 80%;
+	height: 100%;
+	background-color: #FFFFFF;
+	overflow: hidden;
+}
+.guahaoDate{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+.guahaoDate p{
+	width: 100%;
+	background-color: #3E8CF4;
+	color: #FFFFFF;
+	font-size: 1.3rem;
+	text-align: center;
+	padding: 10px 0;
+}
+.guahaoDate ul{
+	width: 70%;
+	margin-left: 15%;
+	padding-top: 30px;
+}
+.guahaoDate ul li{
+	width: 100%;
+	padding: 10px 0;
+}
+.guahaoDate ul li font{
+	font-size: 1.1rem;
+	color: #666666;
+	
+}
+.guahaoDate ul li span{
+	float: right;
+	border: 1px solid #3E8CF4;
+    color: #3E8CF4;
+    border-radius: 5px;
+    padding: 5px 6px;
+    font-size: 1rem;
+    margin-top: -4px;
+}
+/*balance.html*/
+.balance{
+	width: 100%;
+	margin-bottom: 15px;
+	background-color: #FFFFFF;
+}
+.balance li{
+	padding: 15px 0;
+	width: 95%;
+	margin-left: 5%;
+	font-size: 1.3rem;
+	color: #333333;
+}
+.balance li span{
+	float: right;
+	margin-right: 5%;
+	color: #538aed;
+}
+.balance li font{
+	float: right;
+	margin-right: 5%;
+	color: #f49464;
+}
+/*rechargenote.html*/
+.report div{
+	width: 100%;
+	text-align: center;
+}
+.report div img{
+	width: 20%;
+}
+.report div p{
+	font-size: 1.2rem;
+	color: #999999;
+}
+.recharge{
+	width: 100%;
+	background-color: #FFFFFF;
+	margin-bottom: 15px;
+}
+.recharge li{
+	width: 90%;
+	margin-left: 5%;
+}
+.recharge li p{
+	padding: 15px 0;
+	border-bottom: 1px solid #EEEEEE;
+}
+.recharge li p img{
+	width: 5%;
+	margin-top: -1%;
+}
+.recharge li p span{
+	font-size: 1.2rem;
+	color: #333333;
+	margin-left: 3%;
+}
+.recharge li p font{
+	font-size: 1.2rem;
+	color: #333333;
+}
+.recharge li p em{
+	font-size: 1.2rem;
+	color: #f49464;
+}
+.recharge li p a {
+	float: right;
+    color: #538aed;
+    border: 1px solid #538aed;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 3px;
+    margin-top: -1%;
+}
+.recharge li dl{
+	width: 100%;
+}
+.recharge li dl dd{
+	width: 50%;
+	float: left;
+	font-size: 1.2rem;
+	color: #333333;
+	padding: 15px 0;
+}
+.recharge li dl dd font{
+	color: #f49464;
+}
+.recharge li dl dd a{
+	color: #538aed;
+	border: 1px solid #538aed;
+	font-size: 1rem;
+	border-radius: 5px;
+	padding: 3px;
+}
+.recharge li div{
+	
+	font-size: 1.2rem;
+	color: #333333;
+}
+.recharge li div font{
+	display: inline-block;
+	width: 25%;
+	padding-top: 15px;
+}
+.recharge li div span{
+	padding: 15px 0;
+	display: inline-block;
+	float: right;
+	width: 75%;
+}
+.reportList{
+	width: 80%;
+	margin-left: 10%;
+	padding: 5% 0;
+}
+.reportList ul{
+	width: 100%;
+	display: flex;
+	border: 1px solid #538aed;
+	border-radius: 5px;
+}
+.reportList ul li{
+	padding: 3% 0;
+	flex: 1;
+	font-size: 1.2rem;
+	color: #538aed;
+	text-align: center;
+}
+.reportList ul .active{
+	background-color: #538aed;
+	color: #FFFFFF;
+}
+/*userAdd.html*/
+.addJZR{
+	width: 100%;
+}
+.addJZR form{
+	width: 100%;
+}
+.addJZR form ul{
+	background-color: #FFFFFF;
+}
+.addJZR form li{
+	width: 90%;
+	margin-left: 5%;
+	padding: 10px 0;
+}
+.addJZR form li span{
+	display: inline-block;
+	width: 25%;
+	font-size: 1.2rem;
+	color: #333333;
+}
+.addJZR form li input{
+	width: 75%;
+	font-size: 1.2rem;
+	color: #000000;
+	border: none;
+}
+.addJZR form li button{
+	color: #538aed;
+    border: 1px solid #538aed;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: transparent;
+}
+.addJZR form input[type=submit]{
+	width: 90%;
+	margin-left: 5%;
+	color: #FFFFFF;
+	background-color: #538aed;
+	padding: 8px 0;
+	border: none;
+	border-radius: 5px;
+	margin-top: 20px;
+}
+.addJZR p{
+	background-color: #FFFFFF;
+	padding: 10px 5%;
+	font-size: 1.2rem;
+	color: #333333;
+	margin: 3% 0;
+}
+.addJZR p font{
+	float: right;
+	margin-right: 3%;
+}
+.addJZR p img{
+	float: right;
+	width: 2%;
+	margin-top: 1%;
+}
+.alert{
+	position: fixed;
+	width: 60%;
+	top: 50%;
+	transform: translate(0,-50%);
+	margin-left: 20%;
+	border-radius: 5px;
+	border: 1px solid #EEEEEE;
+	display: none;
+}
+.alert p{
+	padding: 5px 0;
+	text-align: center;
+	font-size: 1.2rem;
+	color: #333333;
+	background-color: #f5f5f5;
+}
+.alert li{
+	font-size: 1.2rem;
+	color: #333333;
+	padding: 5px 0;
+	text-align: center;
+	border-bottom: 1px solid #EEEEEE;
+	background-color: #FFFFFF;
+}
+.alert button{
+	width: 100%;
+	font-size: 1.2rem;
+	color: #538aed;
+	padding: 5px 0;
+	border: none;
+	background-color: #FFFFFF;
+	text-align: center;
+}
+/*JZRguanli.html*/
+.addJZR0{
+	padding: 15px 5%;
+	background-color: #FFFFFF;
+	font-size: 1.2rem;
+	color: #333333;
+}
+.addJZR0 a{
+	float: right;
+	margin-right: 5%;
+	color: #538aed;
+    border: 1px solid #538aed;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 3px;
+    margin-top: -1%;
+}
+.JZRcard{
+	margin: 3%;
+	background-color: #FFFFFF;
+	border-radius: 5px;
+}
+.JZRcard p{
+	width: 90%;
+	margin-left: 5%;
+	padding: 10px 0 5px;
+}
+.JZRcard p font{
+	padding: 3px;
+	color: #538aed;
+    border: 1px solid #538aed;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+.JZRcard p span{
+	color: #333333;
+    font-size: 1.2rem;
+    margin-left: 3%;
+}
+.JZRcard ul{
+	width: 90%;
+	margin-left: 5%;
+	border-bottom: 1px solid #EEEEEE;
+}
+.JZRcard ul li{
+	width: 100%;
+	padding: 5px 0;
+}
+.JZRcard ul li span{
+	color: #999999;
+	font-size: 1.2rem;
+}
+.JZRcard ul li a{
+	color: #538aed;
+	font-size: 1.2rem;
+}
+.JZRcard div{
+	padding: 10px 0;
+	width: 90%;
+	margin-left: 5%;
+}
+.JZRcard div .true{
+	width: 7%;
+	margin-top: -2%;
+}
+.JZRcard div span{
+	color: #666666;
+	font-size: 1.2rem;
+}
+.JZRcard div a{
+	float: right;
+	font-size: 1.2rem;
+	margin-left: 2%;
+}
+.JZRcard div a img{
+	width: 40%;
+}
+.delete{
+	position: fixed;
+	width: 60%;
+	top: 50%;
+	transform: translate(0,-50%);
+	margin-left: 20%;
+	border-radius: 5px;
+	border: 1px solid #EEEEEE;
+	display: none;
+}
+.delete p{
+	padding: 5px 0;
+	text-align: center;
+	font-size: 1.2rem;
+	color: #333333;
+	background-color: #f5f5f5;
+}
+.delete div{
+	padding: 30px 0;
+	text-align: center;
+	font-size: 1.2rem;
+	color: #333333;
+	background-color: #FFFFFF;
+}
+.delete ul{
+	width: 100%;
+	border-top: 1px solid #EEEEEE;
+	background-color: #FFFFFF;
+}
+.delete ul li{
+	width: 50%;
+	float: left;
+	padding: 5px 0;
+	color: #538AED;
+	box-sizing: border-box;
+	text-align: center;
+}
+.delete ul li:last-child{
+	border-left: 1px solid #EEEEEE;
+}
+/*modifyJZR.html*/
+.modify{
+	width: 100%;
+	background-color: #FFFFFF;
+	margin-bottom: 15px;
+}
+.modify li{
+	width: 90%;
+	margin-left: 5%;
+	padding: 10px 0;
+	border-top: 1px solid #EEEEEE;
+}
+.modify li:first-child{
+	border-top: none;
+}
+.modify li span{
+	color: #333333;
+	font-size: 1.2rem;
+}
+.modify li font{
+	float: right;
+	color: #999999;
+	font-size: 1.2rem;
+}
+.modify li em{
+	float: right;
+	color: #538aed;
+	font-size: 1.2rem;
+	margin-right: 2%;
+}
+.modify li a{
+	float: right;
+	width: 2%;
+}
+.modify li a img{
+	width: 100%;
+}
+.del{
+	width: 90%;
+    margin-left: 5%;
+    color: #FFFFFF;
+    background-color: #538aed;
+    padding: 8px 0;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+/*mobile.html*/
+.mobile{
+	width: 100%;
+}
+.mobile form{
+	width: 100%;
+}
+.mobile form ul{
+	background-color: #FFFFFF;
+}
+.mobile form li{
+	width: 90%;
+	margin-left: 5%;
+	padding: 10px 0;
+}
+.mobile form li span{
+	display: inline-block;
+	width: 25%;
+	font-size: 1.2rem;
+	color: #333333;
+}
+.mobile form li input{
+	width: 75%;
+	font-size: 1.2rem;
+	color: #000000;
+	border: none;
+}
+.mobile form li button{
+	color: #538aed;
+    border: 1px solid #538aed;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 3px;
+    background-color: transparent;
+}
+.mobile form input[type=submit]{
+	width: 90%;
+	margin-left: 5%;
+	color: #FFFFFF;
+	background-color: #538aed;
+	padding: 8px 0;
+	border: none;
+	border-radius: 5px;
+	margin-top: 20px;
+}
+/*recharge.html*/
+.money{
+	width: 100%;
+	margin-top: 15px;
+}
+.money p{
+	font-size: 1.2rem;
+	color: #333333;
+	padding: 10px 5%;
+	background-color: #FFFFFF;
+}
+.money p span{
+	color: #ff3333;
+	margin-left: 5%;
+}
+.money ul{
+	width: 100%;
+	background-color: #FFFFFF;
+}
+.money ul li{
+	float: left;
+	width: calc(80% / 3);
+	margin-left: 5%;
+	margin-bottom: 10px;
+}
+.money ul li button{
+	width: 100%;
+	border: 1px solid #CCCCCC;
+	color: #333333;
+	font-size: 1.2rem;
+	text-align: center;
+	padding: 15px 0;
+	background-color: transparent;
+	border-radius: 3px;
+}
+.money ul li input{
+	width: 100%;
+	border: 1px solid #CCCCCC;
+	box-sizing: border-box;
+	color: #333333;
+	font-size: 1.2rem;
+	padding: 16px 0;
+	border-radius: 3px;
+	text-align: center;
+}
+.money .myfooter{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background-color: #FFFFFF;
+}
+.money .myfooter div{
+	display: inline-block;
+	width: 65%;
+	margin-left: 5%;
+	font-size: 1.2rem;
+	color: #333333;
+}
+.money .myfooter div span,.money .myfooter div font{
+	color: #538AED;
+}
+.money .myfooter input{
+	width: 30%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	border: none;
+	font-size: 1.2rem;
+	color: #FFFFFF;
+	box-sizing: border-box;
+	background-color: #CCCCCC;
+}
