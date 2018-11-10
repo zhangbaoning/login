@@ -17,7 +17,7 @@ import java.util.List;
  */
 @Service
 public class UserService {
-//    @Resource
+    @Resource
     private UserDao dao;
     public void login(){
 
@@ -25,7 +25,7 @@ public class UserService {
     public void get(){
         User user = new User();
         user.setIdCard("zhang");
-        user.setUsername("zhang");
+        user.setFullName("zhang");
         dao.insert(user);
     }
 
@@ -33,22 +33,15 @@ public class UserService {
      * 身份证号和姓名都不是唯一的，
      * 可能一个身份证号后六位对应多个姓名，
      * 相反也同样
-     * @param username
+     * @param idCard
      */
-    public List<String> getByUsername(final String username){
-        final User user = new User();
-        user.setUsername(username);
-        List<String> idCardList = new ArrayList();
-        dao.select(user).forEach(
-                getUser ->{
-                    String idCard = user.getIdCard();
-                    int length  = idCard.length();
-                    if (length >=6){
-                        idCardList.add(idCard.substring(length-6,length));
-                    }
-                }
-        );
-        return idCardList;
-
+    public User getByIdCard( String idCard) {
+         User user = new User();
+        user.setIdCard(idCard);
+        List<User> userList = dao.select(user);
+        if (userList !=null&&userList.size()>0){
+            return userList.get(0);
+        }
+        return null;
     }
 }

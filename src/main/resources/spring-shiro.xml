@@ -22,13 +22,13 @@
         <property name="securityManager" ref="securityManager" />
         <property name="loginUrl" value="/index" />
         <property name="successUrl" value="/home" />
-        <property name="unauthorizedUrl" value="/403.do" />
+        <property name="unauthorizedUrl" value="/index" />
 
         <property name="filterChainDefinitions">
             <value>
                 /static/**=anon
                 /index = anon
-                /login = authc <!-- authc 表示需要认证才能访问的页面 -->
+                /login = anon <!-- authc 表示需要认证才能访问的页面 -->
                 /home = authc, perms[/home]  <!-- perms 表示需要该权限才能访问的页面 -->
             </value>
         </property>
@@ -46,4 +46,9 @@
 
     <!-- <bean id="shiroCacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
         <property name="cacheManager" ref="cacheManager" /> </bean> -->
+    <aop:config proxy-target-class="true"></aop:config>
+    <bean
+            class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager" />
+    </bean>
 </beans>

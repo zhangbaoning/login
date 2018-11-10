@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<body>
+
+</body>
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url:"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxc0a643110084e6ba&redirect_uri=http://192.168.9.185/index&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect",
+            async:false,
+            dataType:'JSONP'
+        });
+    });
+</script>
+</html>

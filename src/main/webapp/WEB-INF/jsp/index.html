@@ -1,51 +1,67 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-<title>建行陕西分行分期惠</title>
-<!-- meta tags start -->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="Keywords" content="blinds, premium, mobile, template, HTML, Css" />
-<meta name="Description" content="Premium mobile HTML/CSS template." />
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="format-detection" content="telephone=no">
-<link href="css/css.css" rel="stylesheet" type="text/css" media="all" />
-<style>
-	.search ul li {
-    margin-top: 20px;
-}
-</style>
+    <title>建行陕西分行分期惠</title>
+    <!-- meta tags start -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="Keywords" content="blinds, premium, mobile, template, HTML, Css"/>
+    <meta name="Description" content="Premium mobile HTML/CSS template."/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link href="css/css.css" rel="stylesheet" type="text/css" media="all"/>
+    <style>
+        .search ul li {
+            margin-top: 20px;
+        }
+    </style>
 </head>
-	<body>
-		<div class="header">
-	        <p>用户登录</p>
-	        <a href="javascript:;"><img src="img/icon_back_w.png" alt=""></a>	        
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<body>
+<div class="header">
+    <p>用户登录</p>
+    <a href="javascript:;"><img src="img/icon_back_w.png" alt=""></a>
+</div>
+<div class="top">
+    <font><img src="img/gps.png"/>西安市</font>
+    <a>切换城市</a>
+</div>
+<header>
+    <img src="img/banner4.jpg"/>
+</header>
+<div class="search d3">
+    <form method="post" action="/login">
+        <ul>
+            <li>
+                <p><img src="img/ty1.png"/></p>
+                <input id="username" name="fullName" type="text" placeholder="请输入用户名" required>
+            </li>
+            <li>
+                <p><img src="img/mm.png"/></p>
+                <input id="idCard" name="idCard" type="text" placeholder="请输入身份证后六位" required>
+            </li>
+        </ul>
+        <footer><a>忘记密码</a></footer>
+        <div class="btn">
+            <button>登录</button>
         </div>
-		<div class="top">
-			<font><img src="img/gps.png"/>西安市</font>
-			<a>切换城市</a>
-		</div>
-		<header>
-			<img src="img/banner4.jpg" />
-		</header>
-		<div class="search d3">
-			<form method="post" action="/login">
-			  <ul>
-			  	    <li>
-						<p><img src="img/ty1.png"/></p>
-						<input id="username" name="username" type="text" placeholder="请输入用户名" required>
-					</li>
-					<li>
-						<p><img src="img/mm.png"/></p>
-						<input id="idCard" name="idCard" type="text" placeholder="请输入身份证后六位" required>
-					</li>				
-		     </ul>	
-		     <footer><a>忘记密码</a></footer>
-		     <div class="btn">
-				<button>登录</button>
-		     </div>
-			</form>
-		</div>
-	</body>
+    </form>
+</div>
+</body>
+<script>
+    $(document).ready(function(){
+        alert("${openid}");
+        $.ajax({
+            type: 'GET',
+            url:" https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxc0a643110084e6ba&secret=33b1bf4e00e68e3eae1370d3d2ac9670&code=021xS3y10Dwe1F1LuZv10Mx6y10xS3y3&grant_type=authorization_code",
+            async:true,
+            success: function(data){
+                alert("appid="+data.appid)
+            }
+        });
+    })
+</script>
 </html>
+
