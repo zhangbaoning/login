@@ -17,7 +17,7 @@ public class User {
     private long id;
     private String fullName;
     private String idCard;
-    private Integer openid;
+    private String openid;
     private Timestamp gmtCreate;
     private Timestamp gmtModified;
 
@@ -54,11 +54,11 @@ public class User {
 
     @Basic
     @Column(name = "openid")
-    public Integer getOpenid() {
+    public String getOpenid() {
         return openid;
     }
 
-    public void setOpenid(Integer openid) {
+    public void setOpenid(String openid) {
         this.openid = openid;
     }
 

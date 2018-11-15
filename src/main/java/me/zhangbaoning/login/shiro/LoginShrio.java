@@ -1,4 +1,4 @@
-package me.zhangbaoning.login.util;
+package me.zhangbaoning.login.shiro;
 
 import me.zhangbaoning.login.entity.User;
 import me.zhangbaoning.login.service.UserService;
@@ -10,8 +10,6 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
 
 /**
  * @author: zhangbaoning
@@ -31,7 +29,6 @@ public class LoginShrio extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-        System.out.println(11111);
         return null;
     }
 
@@ -49,8 +46,6 @@ public class LoginShrio extends AuthorizingRealm {
             AuthenticationInfo info =null;
             if (user!=null){
                 info = new SimpleAuthenticationInfo(user.getIdCard(),user.getFullName(),getName());
-
-            }else {
 
             }
             return info;

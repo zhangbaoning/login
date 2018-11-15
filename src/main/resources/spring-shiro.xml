@@ -34,7 +34,7 @@
         </property>
     </bean>
 
-    <bean id="myShiroRealm" class="me.zhangbaoning.login.util.LoginShrio">
+    <bean id="myShiroRealm" class="me.zhangbaoning.login.shiro.LoginShrio">
         <!-- businessManager 用来实现用户名密码的查询 -->
         <!--<property name="accountService" ref="accountService" />-->
     </bean>

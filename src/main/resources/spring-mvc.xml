@@ -13,7 +13,7 @@
 
     <!-- 默认的注解映射的支持，自动注册DefaultAnnotationHandlerMapping和AnnotationMethodHandlerAdapter -->
     <mvc:annotation-driven/>
-
+    <mvc:default-servlet-handler/>
     <!-- 自动扫描的包名 -->
     <context:component-scan base-package="me.zhangbaoning.login.controller">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
@@ -21,16 +21,27 @@
     <aop:config proxy-target-class="true"/>
 
     <!-- 视图解释类 -->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-
-        <property name="prefix" value="/WEB-INF/jsp/"/>
+    <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="viewClass"
+                  value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+        <property name="contentType" value="text/html; charset=utf-8"/>
         <property name="suffix" value=".html"/>
     </bean>
-   <!-- <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
-        <property name="securityManager" ref="securityManager"/>
-    </bean>-->
-    <mvc:resources location="static/css/" mapping="/css/**" />
-    <mvc:resources location="static/js/" mapping="js/**" />
-    <mvc:resources location="static/img/" mapping="img/**" />
+
+    <bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath">
+            <value>/WEB-INF/jsp</value>
+        </property>
+        <property name="defaultEncoding">
+            <value>utf-8</value>
+        </property>
+    </bean>
+
+    <!-- <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+         <property name="securityManager" ref="securityManager"/>
+     </bean>-->
+    <mvc:resources location="static/css/" mapping="/css/**"/>
+    <mvc:resources location="static/js/" mapping="js/**"/>
+    <mvc:resources location="static/img/" mapping="img/**"/>
 
 </beans>
