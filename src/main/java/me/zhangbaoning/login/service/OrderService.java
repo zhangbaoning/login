@@ -12,12 +12,17 @@ import java.util.List;
  * @author: zhangbaoning
  * @date: 2018/11/13
  * @since: JDK 1.8
- * @description: TODO
+ * @description: 预约服务层
  */
 @Service
 public class OrderService {
     @Resource
     private OrderDao dao;
+
+    /**
+     * 获取所有的预约
+     * @return
+     */
     public List<Orders> getAll(){
         List<Orders> orderList = dao.selectAll();
         return orderList;

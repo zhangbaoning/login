@@ -32,7 +32,7 @@
     <img src="img/banner4.jpg"/>
 </header>
 <div class="search d3">
-    <form method="post" action="/login">
+    <form method="post" action="login">
         <ul>
             <li>
                 <p><img src="img/ty1.png"/></p>
@@ -53,9 +53,14 @@
 </body>
 <script>
     $(document).ready(function () {
-        alert("${openid}");
-        $("#openid").val("${openid}");
-        Cookies.set('openid', "${openid}", {expires: 7});
+         <#if openid??>
+          $("#openid").val("${openid}");
+          Cookies.set('openid', "${openid}", {expires: 7});
+          <#else >
+             $("#openid").val(Cookies.get('openid'));
+         </#if>
+        <#--Cookies.set('code', "${code}", {expires: 7});-->
+
     })
 </script>
 </html>

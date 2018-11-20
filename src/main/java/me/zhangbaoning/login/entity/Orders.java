@@ -11,7 +11,7 @@ import java.util.Objects;
  * @author: zhangbaoning
  * @date: 2018/11/12
  * @since: JDK 1.8
- * @description: TODO
+ * @description: 预约实体类
  */
 @Entity
 public class Orders {

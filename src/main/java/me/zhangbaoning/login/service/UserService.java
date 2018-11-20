@@ -7,23 +7,22 @@ import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
 import java.sql.Timestamp;
-import java.util.List;
 
 /**
  * @author: zhangbaoning
  * @date: 2018/11/8
  * @since: JDK 1.8
- * @description: TODO
+ * @description: 用户服务层
  */
 @Service
 public class UserService {
     @Resource
     private UserDao dao;
 
-    public void login() {
-
-    }
-
+    /**
+     * 添加openId之后更新修改时间
+     * @param user
+     */
     public void updateByIdCard(User user) {
 
         user.setGmtModified(new Timestamp(System.currentTimeMillis()));
@@ -33,25 +32,36 @@ public class UserService {
     }
 
     /**
-     * 身份证号和姓名都不是唯一的，
-     * 可能一个身份证号后六位对应多个姓名，
-     * 相反也同样
-     *
+     * 使用身份证号查询
+     * 身份证号后六位唯一
      * @param idCard
      */
     public User getByIdCard(String idCard) {
-        User user = new User();
-        user.setIdCard(idCard);
-        List<User> userList = dao.select(user);
-        if (userList != null && userList.size() > 0) {
-            return userList.get(0);
+
+
+        User user = null;
+        try {
+            user = dao.selectUserByIdcardLike(idCard);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        return null;
+        return user;
     }
 
+    /**
+     * 通过openid进行查询
+     * @param openid
+     * @return
+     */
     public User getByOpenid(String openid) {
+        User getUser = null;
         User user = new User();
         user.setOpenid(openid);
-        return dao.selectOne(user);
+        try {
+            getUser = dao.selectOne(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return getUser;
     }
 }

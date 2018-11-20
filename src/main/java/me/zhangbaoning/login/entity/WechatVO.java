@@ -4,7 +4,7 @@ package me.zhangbaoning.login.entity;
  * @author: zhangbaoning
  * @date: 2018/11/10
  * @since: JDK 1.8
- * @description: TODO
+ * @description: 微信封装类
  */
 public class WechatVO {
     String code;

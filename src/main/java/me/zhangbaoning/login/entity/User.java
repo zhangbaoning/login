@@ -10,11 +10,11 @@ import java.sql.Timestamp;
  * @author: zhangbaoning
  * @date: 2018/11/8
  * @since: JDK 1.8
- * @description: TODO
+ * @description: 用户实体类
  */
 @Entity
 public class User {
-    private long id;
+    private int id;
     private String fullName;
     private String idCard;
     private String openid;
@@ -23,11 +23,11 @@ public class User {
 
     @Id
     @Column(name = "id")
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -15,7 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author: zhangbaoning
  * @date: 2018/11/8
  * @since: JDK 1.8
- * @description: TODO
+ * @description: 登陆拦截
  */
 public class LoginShrio extends AuthorizingRealm {
     @Autowired
@@ -45,7 +45,10 @@ public class LoginShrio extends AuthorizingRealm {
             User user = service.getByIdCard(idCard);
             AuthenticationInfo info =null;
             if (user!=null){
-                info = new SimpleAuthenticationInfo(user.getIdCard(),user.getFullName(),getName());
+                String getIdCard = user.getIdCard();
+                // 截取后六位进行验证
+                String authIdCard= getIdCard.substring(getIdCard.length()-6);
+                info = new SimpleAuthenticationInfo(authIdCard,user.getFullName(),getName());
 
             }
             return info;

@@ -27,7 +27,7 @@ import java.util.List;
  * @author: zhangbaoning
  * @date: 2018/11/8
  * @since: JDK 1.8
- * @description: TODO
+ * @description: 登陆控制层
  */
 @Controller
 public class LoginController {
@@ -55,6 +55,9 @@ public class LoginController {
         try {
             // 登陆成功的话，通过更新保存openid，并跳转到预约页面
             subject.login(token);
+            // 先通过后六位的身份证号查询出真是的idCard再进行更新
+            User searchUser = service.getByIdCard(user.getIdCard());
+            user.setIdCard(searchUser.getIdCard());
             service.updateByIdCard(user);
             view.setViewName("myappointment");
             List  orderList= orderService.getAll();
@@ -62,7 +65,8 @@ public class LoginController {
 
         } catch (AuthenticationException e) {
             // 失败的话，返回到登陆页面
-            e.printStackTrace();
+            // 失败返回的页面不再获取openid,直接从cookie里面取
+            view.addObject("hasOpenId",true);
             view.setViewName("index");
         }
         return view;
@@ -77,15 +81,21 @@ public class LoginController {
     public ModelAndView index(WechatVO wechatVO) {
         ModelAndView view = new ModelAndView();
         String openid = null;
+        String code = null;
         Cookie[] cookies = request.getCookies();
         if (cookies!=null && cookies.length>0){
             for (Cookie cookie : cookies) {
                 if ("openid".equals(cookie.getName())) {
                     openid = cookie.getValue();
                 }
+                if (wechatVO == null && "code".equals(cookie.getName())){
+                    code = cookie.getValue();
+                }
             }
         }
-
+        if (code == null){
+            code = wechatVO.getCode();
+        }
         // 当openid不为空的话，通过cookie中的openid去查找用户信息
         if (openid != null) {
             User user = service.getByOpenid(openid);
@@ -96,22 +106,16 @@ public class LoginController {
         }
         // 无openid或者openid查询不到对应的用户时，重新获取openid
         RestTemplate rest = new RestTemplate();
-        String url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid="+appID+"&secret="+appsecret+"&code=" + wechatVO.getCode() + "&grant_type=authorization_code";
+        String url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid="+appID+"&secret="+appsecret+"&code=" + code + "&grant_type=authorization_code";
         ResponseEntity<String> entity = rest.getForEntity(url, String.class);
         JSONObject jsonObject = new JSONObject(entity.getBody());
         openid = (String) jsonObject.get("openid");
         // 向index页面传入openid
         view.addObject("openid", openid);
-        view.setViewName("/WEB-INF/jsp/index.ftl");
+        // 保存code方便openid不可用时，再次获取openid
+        view.addObject("code", code);
+        view.setViewName("index");
         return view;
 
-    }
-    @RequestMapping(value = "/wxIndex", method = RequestMethod.GET)
-    public void wxIndex() {
-
-        RestTemplate rest = new RestTemplate();
-        String url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxc0a643110084e6ba&redirect_uri=http://192.168.9.185/login/index&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect";
-        ResponseEntity<String> entity = rest.getForEntity(url, String.class);
-        System.out.println(entity.getBody());
     }
 }

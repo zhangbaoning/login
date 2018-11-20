@@ -47,8 +47,9 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <!--<property name="mapperLocations" value="classpath:com/scarecrow/elearning/uac/resources/*/*Mapper.xml"></property>-->
+        <property name="mapperLocations" value="classpath:me/zhangbaoning/login/dao/*.xml"></property>
         <property name="typeAliasesPackage" value="me.zhangbaoning.login.entity"></property>
+        <property name="configLocation" value="classpath:mybatis-config.xml"></property>
     </bean>
 
     <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
