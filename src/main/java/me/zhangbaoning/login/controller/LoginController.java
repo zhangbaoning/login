@@ -10,12 +10,14 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
+import sun.net.www.http.HttpClient;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -35,7 +37,10 @@ public class LoginController {
     private OrderService orderService;
     @Autowired
     private HttpServletRequest request;
-
+    @Value("${appID}")
+    private String appID;
+    @Value("${appsecret}")
+    private String appsecret;
     /**
      * 登陆
      *
@@ -91,7 +96,7 @@ public class LoginController {
         }
         // 无openid或者openid查询不到对应的用户时，重新获取openid
         RestTemplate rest = new RestTemplate();
-        String url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxc0a643110084e6ba&secret=33b1bf4e00e68e3eae1370d3d2ac9670&code=" + wechatVO.getCode() + "&grant_type=authorization_code";
+        String url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid="+appID+"&secret="+appsecret+"&code=" + wechatVO.getCode() + "&grant_type=authorization_code";
         ResponseEntity<String> entity = rest.getForEntity(url, String.class);
         JSONObject jsonObject = new JSONObject(entity.getBody());
         openid = (String) jsonObject.get("openid");
@@ -101,5 +106,12 @@ public class LoginController {
         return view;
 
     }
+    @RequestMapping(value = "/wxIndex", method = RequestMethod.GET)
+    public void wxIndex() {
 
+        RestTemplate rest = new RestTemplate();
+        String url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxc0a643110084e6ba&redirect_uri=http://192.168.9.185/login/index&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect";
+        ResponseEntity<String> entity = rest.getForEntity(url, String.class);
+        System.out.println(entity.getBody());
+    }
 }
